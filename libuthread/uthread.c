@@ -28,7 +28,7 @@ struct TCB {
 };
 
 static void create_main_thread(void) {
-	read_queue = queue_create();
+	ready_queue = queue_create();
 	block_queue = queue_create();
 	zombie_queue = queue_create();
 
