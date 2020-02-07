@@ -8,14 +8,12 @@ all: $(lib)
 $(lib): queue.o uthread.o
 	ar rcs $(lib) queue.o uthread.o
 
-%.o: %.c 
-	$(CC) $(CFLAGS) -c -o $@ $< 
 
 queue.o: queue.c queue.h
+	$(CC) $(CFLAGS) -c -o $@ $< 
 
 uthread.o: uthread.c uthread.h 
-
-preempt.o: preempt.c preempt.h
+	$(CC) $(CFLAGS) -c -o $@ $< 
 
 clean:
 	rm -f $(lib) %.o 
